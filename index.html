@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RailResell | Train Ticket Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <span class="brand-mark">R</span>
+          <span>RailResell</span>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#marketplace">Marketplace</a>
+          <a href="#sell-ticket">Sell Ticket</a>
+          <a href="#how-it-works">How it Works</a>
+        </nav>
+
+        <button class="primary-btn">My Tickets</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-content">
+          <div class="hero-copy">
+            <span class="eyebrow">Smart resale for train journeys</span>
+            <h1>Sell unused train tickets. Buy verified seats at a better price.</h1>
+            <p>
+              If your trip got canceled or changed, upload your train ticket and
+              sell it to another traveler at a fair resale value.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#sell-ticket" class="primary-btn">Upload Ticket</a>
+              <a href="#marketplace" class="secondary-btn">Browse Tickets</a>
+            </div>
+
+            <div class="stats">
+              <div>
+                <strong id="stat-live">240+</strong>
+                <span>Tickets listed</span>
+              </div>
+              <div>
+                <strong>18k</strong>
+                <span>People saved</span>
+              </div>
+              <div>
+                <strong>4.9/5</strong>
+                <span>Trust score</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="ticket-preview">
+              <div class="ticket-top">
+                <span class="train-badge">Rajdhani Express</span>
+                <span class="status live">Available</span>
+              </div>
+
+              <div class="route">
+                <div>
+                  <small>From</small>
+                  <strong>Mumbai</strong>
+                </div>
+                <div class="route-arrow">→</div>
+                <div>
+                  <small>To</small>
+                  <strong>Delhi</strong>
+                </div>
+              </div>
+
+              <div class="ticket-meta">
+                <div>
+                  <small>Date</small>
+                  <strong>31 Oct 2026</strong>
+                </div>
+                <div>
+                  <small>Seat</small>
+                  <strong>A1 / 12</strong>
+                </div>
+              </div>
+
+              <div class="ticket-price">
+                <span>Original</span>
+                <strong>₹1,500</strong>
+              </div>
+
+              <div class="sale-row">
+                <span>Resale</span>
+                <strong>₹1,299</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sell-ticket" class="selling-section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">List your ticket</span>
+            <h2>Sell your train ticket in under a minute</h2>
+          </div>
+
+          <div class="sell-grid">
+            <form id="ticketForm" class="ticket-form">
+              <div class="input-row">
+                <label>
+                  From
+                  <input type="text" id="fromCity" placeholder="Mumbai" required />
+                </label>
+                <label>
+                  To
+                  <input type="text" id="toCity" placeholder="Delhi" required />
+                </label>
+              </div>
+
+              <div class="input-row">
+                <label>
+                  Train name
+                  <input type="text" id="trainName" placeholder="Rajdhani Express" required />
+                </label>
+                <label>
+                  Class / Coach
+                  <input type="text" id="coach" placeholder="AC 2 Tier / A1" required />
+                </label>
+              </div>
+
+              <div class="input-row">
+                <label>
+                  Departure date
+                  <input type="date" id="departureDate" required />
+                </label>
+                <label>
+                  Departure time
+                  <input type="time" id="departureTime" required />
+                </label>
+              </div>
+
+              <div class="input-row">
+                <label>
+                  Original price (₹)
+                  <input type="number" id="originalPrice" min="50" step="10" required />
+                </label>
+                <label>
+                  Selling price (₹)
+                  <input type="number" id="salePrice" min="50" step="10" required />
+                </label>
+              </div>
+
+              <div class="input-row">
+                <label>
+                  Seat number
+                  <input type="text" id="seatNumber" placeholder="12 / A1-12" required />
+                </label>
+                <label>
+                  Ticket image
+                  <input type="file" id="ticketImage" accept="image/*" />
+                </label>
+              </div>
+
+              <div class="input-row">
+                <label class="full-width">
+                  Notes
+                  <textarea
+                    id="ticketNotes"
+                    rows="3"
+                    placeholder="Example: One seat available, valid for travel on same date."
+                  ></textarea>
+                </label>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="primary-btn">Publish Ticket</button>
+                <span id="formMessage" class="form-message"></span>
+              </div>
+            </form>
+
+            <div class="upload-preview">
+              <div class="preview-card">
+                <h3>Ticket Preview</h3>
+                <img
+                  id="previewImage"
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                  alt="Train ticket preview"
+                />
+                <p>Your uploaded ticket image will appear here before you publish.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="marketplace" class="marketplace">
+        <div class="container">
+          <div class="market-header">
+            <div class="section-heading left">
+              <span class="eyebrow">Available tickets</span>
+              <h2>Buy a train ticket from another traveler</h2>
+            </div>
+
+            <div class="filter-box">
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Search route or train"
+              />
+            </div>
+          </div>
+
+          <div id="ticketsGrid" class="tickets-grid"></div>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="steps">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">How it works</span>
+            <h2>Simple steps for buyers and sellers</h2>
+          </div>
+
+          <div class="step-grid">
+            <div class="step-card">
+              <span class="step-number">01</span>
+              <h3>Upload ticket</h3>
+              <p>Upload your ticket image and enter the travel details with your selling price.</p>
+            </div>
+
+            <div class="step-card">
+              <span class="step-number">02</span>
+              <h3>List for sale</h3>
+              <p>Set your resale price at or below the original fare and publish to the marketplace.</p>
+            </div>
+
+            <div class="step-card">
+              <span class="step-number">03</span>
+              <h3>Buyer confirms</h3>
+              <p>Another traveler browses available tickets and books the one that matches their trip.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="brand">
+          <span class="brand-mark">R</span>
+          <span>RailResell</span>
+        </div>
+        <p>Travel smarter by buying and selling valid train tickets safely.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
